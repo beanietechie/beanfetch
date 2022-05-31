@@ -20,10 +20,13 @@ elif [[ -f /sys/firmware/devicetree/base/model ]]; then
 elif [[ -f /tmp/sysinfo/model ]]; then
     model=$(< /tmp/sysinfo/model)
 fi
+shell="$(echo $SHELL | sed "s/^.*\///g")"
 
 echo "$username@$hostname"
+echo ""
 echo "Operating system: $os"
 echo "Kernel and version: $kernel"
 echo "Device model: $model"
+echo "Command line shell: $shell"
 
 echo ""
